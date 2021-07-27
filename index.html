@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> 이수경 포트폴리오 </title>
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:regular,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:regular,500,600,700" rel="stylesheet">
   <link rel="icon" href="images/fav.ico">
   <link rel="stylesheet" href="css/portfolio.css">
   <script src="js/jquery-1.12.4.min.js"></script>
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/gsap.min.js"></script>
-  <script src="js/portfolio.js"></script>
+  <script src="js/new.js"></script>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#work">Work</a></li>
-          <li><a href="#skill">Skill</a></li>
+           <!--<li><a href="#skill">Skill</a></li> -->
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -33,8 +33,8 @@
     <section id="intro">
       <div class="intro_top intro">
         <div class="hello_move">
-          <h2 class="hello">hello</h2>
           <img src="images/1_cloud1.png" alt="" class="cloud d-3">
+          <h2 class="hello">hello</h2>
         </div>
         <img src="images/1_pink_s_bal.png" alt="" class="balloon d-6">
         <img src="images/1_purple_bal.png" alt="" class="balloon d-9">
@@ -58,42 +58,70 @@
         </div>
         <div class="txt">
           <div>
-            <h2>안녕하세요, 웹 퍼블리셔 이수경입니다.</h2>
-            <p class="one">
-              이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경
-            </p>
-            <p class="two">
-              이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경이수경
-            </p>
-            <button type="button" class="go_back">Back</button>
+            <div class="howdoithink">
+              <h2>안녕하세요,<br> 웹 퍼블리셔 이수경입니다.</h2>
+              <p>저는 웹사이트에서 가장 중요한 것은 <br>
+                <span class="bold">‘웹사이트가 목적에 맞게 제작되었는가’와 <br>‘사용자에게 편의성을 제공하는가’</span> 라고 생각합니다.<br>
+                따라서 저는 정보전달, 학습, 채팅, 오락 등 목적에 부합하도록 웹사이트가 구성될 수 있도록 노력합니다.
+                제가 구성한 웹페이지가 사용자의 웹사이트 사용 목적을 충족시킬 것인가 그리고 그 과정이 어렵지 않고 편리할 것 인가를 늘 고민하는 웹퍼블리셔입니다.
+              </p>
+            </div>
+            <div class="character">
+              <h3 class="blind">나의 성격 및 강점</h3>
+              <div>
+                <strong>책임감</strong>
+                <p>주어진 일을 끝까지 포기하지 않으며 책임감을 갖고 임합니다.</p>
+              </div>
+              <div>
+                <strong>협동심</strong>
+                <p>서로를 보완해주며 시너지 효과를 내는 팀워크를 추구합니다.</p>
+              </div>
+            </div>
+            <div class="skill">
+              <h3>Skill</h3>
+              <img src="images/2_skill_logo1.png" alt="html css js를 사용할수 있습니다">
+              <img src="images/2_skill.png" alt="sass를 사용할 수 있습니다">
+            </div>
           </div>
         </div>
       </div>
     </section>
     <section id="work">
       <div class="front_back">
+        <div class="prev_next">
+          <button type="button" class="prev"><img src="images/prev_btn.png" alt="이전 버튼"></button>
+          <button type="button" class="next"><img src="images/next_btn.png" alt="다음 버튼"></button>
+        </div>
         <div class="front card">
-            <h2><img src="images/3_work.png" alt="작업물"></h2>
+            <h2><img src="images/3_work.png" alt="프로젝트: 설화수"></h2>
             <h3>Sulwhasoo</h3>
             <button type="button" class="open sulwhasoo" aria-haspopup="dialog" title="대화상자" data-href="#modalWork">자세히
               보기</button>
         </div>
         <div class="back card">
-            <h2><img src="images/3_work.png" alt="작업물"></h2>
+            <h2><img src="images/3_work.png" alt="프로젝트: 코닥"></h2>
             <h3>Kodak</h3>
             <button type="button" class="open kodak" aria-haspopup="dialog" title="대화상자" data-href="#modalWork">자세히
               보기</button>
         </div>
-        <div class="controller">
-          <div class="prev_next">
-            <button type="button" class="prev"><img src="images/prev_btn.png" alt="이전 버튼"></button>
-            <button type="button" class="next"><img src="images/next_btn.png" alt="다음 버튼"></button>
-          </div>
+      </div>
+      <img src="images/3_clouds.png" alt="">
+    </section>
+    <section id="contact" class="clearfix">
+      <h2>LEE<br>SU<br>KYUNG</h2>
+      <div>
+        <div class="contact_img">
+          <h2><img src="images/4_contact.png" alt="contact"></h2>
+          <img src="images/4_contact_img.png" alt="">
+        </div>
+        <div class="contact_txt">
+          <div class="birth">1996.05.17</div>
+          <div class="home">서울시 강남구 도곡동</div>
+          <div class="email">sukyung6999@gmail.com</div>
         </div>
       </div>
     </section>
-    <section id="contact"></section>
-    <aside id="banner">
+    <!-- <aside id="banner">
       <nav id="snb">
         <ul>
           <li><a href="#about">About</a></li>
@@ -102,14 +130,14 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-    </aside>
+    </aside> -->
   </div>
   <!-- 모달 창 -->
   <div id="modalWork" role="dialog" aria-modal="true" aria-label="작업물 상세보기">
-    <div class="modal_wrap active">
+    <div class="modal_wrap">
       <ul role="tablist">
         <li role="tab" aria-controls="tabpanel1" id="tab1" class="tab">Sulwhasoo</li>
-        <li role="tab" aria-controls="tabpanel2" id="tab2" class="tab on">Kodak</li>
+        <li role="tab" aria-controls="tabpanel2" id="tab2" class="tab">Kodak</li>
       </ul>
       <div role="tabpanel" aria-labelledby="tab1" id="tabpanel1" class="tabpanel clearfix">
         <div class="md_tit">
@@ -120,8 +148,8 @@
         </div>
         <div class="move_up">
           <ul>
-            <li>
-              <a href="https://leesukyung6999.github.io/sulwhasoo/">
+            <li class="first">
+              <a href="https://leesukyung6999.github.io/sulwhasoo/" title="설화수 리뉴얼 페이지" target="_blank">
                 <img src="images/3_sulwhasoo_p1.png" alt="">
               </a>
               <strong class="b">1</strong>
@@ -130,7 +158,7 @@
                 주었습니다.</p>
             </li>
             <li>
-              <a href="https://leesukyung6999.github.io/sulwhasoo/">
+              <a href="https://leesukyung6999.github.io/sulwhasoo/" title="설화수 리뉴얼 페이지" target="_blank">
                 <img src="images/3_sulwhasoo_p2.png" alt="">
               </a>
               <strong class="b">2</strong>
@@ -138,7 +166,7 @@
                   오버</span>했을 경우 <span class="bb">해당 제품의 텍스처</span> 사진을 보이게 했습니다.</p>
             </li>
             <li>
-              <a href="https://leesukyung6999.github.io/sulwhasoo/">
+              <a href="https://leesukyung6999.github.io/sulwhasoo/" title="설화수 리뉴얼 페이지" target="_blank">
                 <img src="images/3_sulwhasoo_p3.png" alt="">
               </a>
               <strong class="b">3</strong>
@@ -146,8 +174,8 @@
                 두 가지 라인을 선보이고 있습니다. 그렇기 때문에 안티에징 라인은 한 섹션에서
                 <span class="bb">스와이퍼 슬라이더</span>를 통해 2가지 라인을 보여줄 수 있게 하였습니다. </p>
             </li>
-            <li>
-              <a href="https://leesukyung6999.github.io/sulwhasoo/">
+            <li class="last">
+              <a href="https://leesukyung6999.github.io/sulwhasoo/" title="설화수 리뉴얼 페이지" target="_blank">
                 <img src="images/3_sulwhasoo_p4.png" alt="">
               </a>
               <strong class="b">4</strong>
@@ -167,7 +195,7 @@
         </div>
         <div class="responsive">
           <ul role="tablist">
-            <li role="tab" aria-controls="tabpanelPC" id="tabPC" class="tabR">
+            <li role="tab" aria-controls="tabpanelPC" id="tabPC" class="tabR on">
               <img src="images/3_kodak_ico1.png" alt="">
               <h5>PC</h5>
             </li>
@@ -180,113 +208,114 @@
               <h5>MOBILE</h5>
             </li>
           </ul>
-          <div class="move_up">
-            <div role="tabpanel" aria-labelledby="tabPC" id="tabpanelPC" class="tabpanelR">
-              <ul>
-                <li>
-                  <a href="https://leesukyung6999.github.io/kodak/">
-                    <img src="images/3_kodak_p1.png" alt="">
-                  </a>
-                  <strong class="b">1</strong>
-                  <p>두번째 프로젝트이자 첫 반응형 프로젝트인 ‘코닥’입니다. 1888년 이래로 오랜 시간동안 유지해왔다는 점이 고객에게 신뢰를 줄 것이라 생각하여 since 1888을 큰 폰트
-                    사이즈와 볼드체로 강조하였습니다. 상단에 <span class="b_y">헤더</span> 부분은 아래로 스크롤을 내리게 되면 <span class="b_y">가로의 크기가 화면을
-                      채우는 효과</span>를 주었습니다.
-                  </p>
-                </li>
-                <li>
-                  <a href="https://leesukyung6999.github.io/kodak/">
-                    <img src="images/3_kodak_p2.png" alt="">
-                  </a>
-                  <strong class="b">2</strong>
-                  <p>두번째 섹션에서는 새로운 것을 시도하며 트렌드를 반영하는 기업임을 보여주기 위해 ‘뉴트로’ 트렌드가 반영된 신제품 3개를 선정하여 <span
-                      class="b_y">box-shadow 효과</span>를 주어 공중에 뜬 느낌을 주었습니다.</p>
-                </li>
-                <li>
-                  <a href="https://leesukyung6999.github.io/kodak/">
-                    <img src="images/3_kodak_p3.png" alt="">
-                  </a>
-                  <strong class="b">3</strong>
-                  <p>세번째 섹션에서는 신제품의 가장 큰 특징 중 하나인 핸드폰과 코닥 카메라가 연동된다는 것을 보여주기 위해 <span class="b_y">animate 효과</span>를
-                    사용했습니다. 우선 핸드폰이 오른쪽으로 살짝 기울어지며 블루투스가 깜빡이면, 핸드폰과 블루투스는 사라지고 카메라에서 사진이 뽑아져 나오게 했습니다. 이후 인쇄된 사진이 커지면서
-                    모션이 마무리되도록 했습니다.</p>
-                </li>
-                <li>
-                  <a href="https://leesukyung6999.github.io/kodak/">
-                    <img src="images/3_kodak_p4.png" alt="">
-                  </a>
-                  <strong class="b">4</strong>
-                  <p>네번째 섹션에서는 코닥만의 4pass 필름 인화기술을 효과적으로 보여주기 위해<span class="b_y"> before-after의 오픈 소스</span>를 가져와
-                    활용하였으며, 사용자가 쉽게 접근할 수 있도록 마우스 모양의 아이콘이 좌우로 움직이는 동작을 CSS의 animation을 통해 구현했습니다.</p>
-                </li>
-                <li>
-                  <a href="https://leesukyung6999.github.io/kodak/">
-                    <img src="images/3_kodak_p5.png" alt="">
-                  </a>
-                  <strong class="b">5</strong>
-                  <p>마지막 이벤트 섹션에서는 jQuery를 통해 이미지를 클릭하면 해당 이미지는 커지고, 이벤트 이름, 기간, 자세히 보기 버튼이 이미지 하단에서 내려오도록 <span
-                      class="b_y">animate를 사용</span>했습니다.</p>
-                </li>
-              </ul>
-            </div>
-            <div role="tabpanel" aria-labelledby="tabTb" id="tabpanelTb" class="tabpanelR">
-              <p>* PC버전과 디자인은 동일하며,<br>
-                Media query를 통해 창을 늘리거나 줄여도<br>
-                디자인이 유지되게 만들었습니다.</p>
-              <img src="images/3_kodak_t.png" alt="">
-            </div>
-            <div role="tabpanel" aria-labelledby="tabM" id="tabpanelM" class="tabpanelR">
-              <p>* MOBILE버전은 PC버전과 달리 <br>
-                네비게이션, 본문 3, 4, 5에서 디자인이<br>
-                다르며, 아래는 차이점에 대한 설명입니다.</p>
-              <ul>
-                <li>
-                  <a href="https://leesukyung6999.github.io/kodak/">
-                    <img src="images/3_kodak_m_p1.png" alt="">
-                  </a>
-                  <div class="m_txt">
+          <div class="move_up"><!-- overflow: hidden -->
+            <div><!-- 위로 올리기 -->
+              <div role="tabpanel" aria-labelledby="tabPC" id="tabpanelPC" class="tabpanelR">
+                <ul>
+                  <li class="first">
+                    <a href="https://leesukyung6999.github.io/kodak/" title="코닥 리뉴얼 페이지" target="_blank">
+                      <img src="images/3_kodak_p1.png" alt="">
+                    </a>
                     <strong class="b">1</strong>
-                    <p>모바일 네비게이션을 열경우 모바일안에서 Tab키만으로 움직일 수 있게 <span class="b_y">접근성</span>을 지켰습니다.</p>
-                  </div>
-                </li>
-                <li>
-                  <a href="https://leesukyung6999.github.io/kodak/">
-                    <img src="images/3_kodak_m_p2.png" alt="">
-                  </a>
-                  <div class="m_txt">
-                    <strong class="b">2</strong>
-                    <p>jQuery로 핸드폰이 오른쪽으로 기울어지는 모션과 블루투스가 깜빡이고 나면 카메라에서 사진이 나오게 <span class="b_y">animate</span>을 이용하여
-                      구현하였습니다.
+                    <p>두번째 프로젝트이자 첫 반응형 프로젝트인 ‘코닥’입니다. 1888년 이래로 오랜 시간동안 유지해왔다는 점이 고객에게 신뢰를 줄 것이라 생각하여 since 1888을 큰 폰트
+                      사이즈와 볼드체로 강조하였습니다. 상단에 <span class="b_y">헤더</span> 부분은 아래로 스크롤을 내리게 되면 <span class="b_y">가로의 크기가 화면을
+                        채우는 효과</span>를 주었습니다.
                     </p>
-                  </div>
-                </li>
-                <li>
-                  <a href="https://leesukyung6999.github.io/kodak/">
-                    <img src="images/3_kodak_m_p3.png" alt="">
-                  </a>
-                  <div class="m_txt">
+                  </li>
+                  <li>
+                    <a href="https://leesukyung6999.github.io/kodak/" title="코닥 리뉴얼 페이지" target="_blank">
+                      <img src="images/3_kodak_p2.png" alt="">
+                    </a>
+                    <strong class="b">2</strong>
+                    <p>두번째 섹션에서는 새로운 것을 시도하며 트렌드를 반영하는 기업임을 보여주기 위해 ‘뉴트로’ 트렌드가 반영된 신제품 3개를 선정하여 <span
+                        class="b_y">box-shadow 효과</span>를 주어 공중에 뜬 느낌을 주었습니다.</p>
+                  </li>
+                  <li>
+                    <a href="https://leesukyung6999.github.io/kodak/" title="코닥 리뉴얼 페이지" target="_blank">
+                      <img src="images/3_kodak_p3.png" alt="">
+                    </a>
                     <strong class="b">3</strong>
-                    <p><span class="b_y">delay와 animate</span> 효과로 실제로 4pass 인화되는 것처럼 보여지도록 구현했습니다.</p>
-                  </div>
-                </li>
-                <li>
-                  <a href="https://leesukyung6999.github.io/kodak/">
-                    <img src="images/3_kodak_m_p4.png" alt="">
-                  </a>
-                  <div class="m_txt">
+                    <p>세번째 섹션에서는 신제품의 가장 큰 특징 중 하나인 핸드폰과 코닥 카메라가 연동된다는 것을 보여주기 위해 <span class="b_y">animate 효과</span>를
+                      사용했습니다. 우선 핸드폰이 오른쪽으로 살짝 기울어지며 블루투스가 깜빡이면, 핸드폰과 블루투스는 사라지고 카메라에서 사진이 뽑아져 나오게 했습니다. 이후 인쇄된 사진이 커지면서
+                      모션이 마무리되도록 했습니다.</p>
+                  </li>
+                  <li>
+                    <a href="https://leesukyung6999.github.io/kodak/" title="코닥 리뉴얼 페이지" target="_blank">
+                      <img src="images/3_kodak_p4.png" alt="">
+                    </a>
                     <strong class="b">4</strong>
-                    <p>html로 <span class="b_y">아코디언</span>으로 마크업했으며,
-                      jQuery로 접근성을 지키며 해당 사진을 클릭하면 <span class="b_y">animate로 max-height</span>이 늘어나는 효과를 주어 상세 내용이
-                      구현하였습니다.</p>
-                  </div>
-                </li>
-              </ul>
+                    <p>네번째 섹션에서는 코닥만의 4pass 필름 인화기술을 효과적으로 보여주기 위해<span class="b_y"> before-after의 오픈 소스</span>를 가져와
+                      활용하였으며, 사용자가 쉽게 접근할 수 있도록 마우스 모양의 아이콘이 좌우로 움직이는 동작을 CSS의 animation을 통해 구현했습니다.</p>
+                  </li>
+                  <li>
+                    <a href="https://leesukyung6999.github.io/kodak/" title="코닥 리뉴얼 페이지" target="_blank">
+                      <img src="images/3_kodak_p5.png" alt="">
+                    </a>
+                    <strong class="b">5</strong>
+                    <p>마지막 이벤트 섹션에서는 jQuery를 통해 이미지를 클릭하면 해당 이미지는 커지고, 이벤트 이름, 기간, 자세히 보기 버튼이 이미지 하단에서 내려오도록 <span
+                        class="b_y">animate를 사용</span>했습니다.</p>
+                  </li>
+                </ul>
+              </div>
+              <div role="tabpanel" aria-labelledby="tabTb" id="tabpanelTb" class="tabpanelR">
+                <p>* PC버전과 디자인은 동일하며,<br>
+                  Media query를 통해 창을 늘리거나 줄여도<br>
+                  디자인이 유지되게 만들었습니다.</p>
+                <a href="https://leesukyung6999.github.io/kodak/" title="코닥 리뉴얼 페이지" target="_blank"><img src="images/3_kodak_t.png" alt=""></a>
+              </div>
+              <div role="tabpanel" aria-labelledby="tabM" id="tabpanelM" class="tabpanelR">
+                <p>* MOBILE버전은 PC버전과 달리 <br>
+                  네비게이션, 본문 3, 4, 5에서 디자인이<br>
+                  다르며, 아래는 차이점에 대한 설명입니다.</p>
+                <ul>
+                  <li>
+                    <a href="https://leesukyung6999.github.io/kodak/" title="코닥 리뉴얼 페이지" target="_blank">
+                      <img src="images/3_kodak_m_p1.png" alt="">
+                    </a>
+                    <div class="m_txt">
+                      <strong class="b">1</strong>
+                      <p>모바일 네비게이션을 열경우 모바일안에서 Tab키만으로 움직일 수 있게 <span class="b_y">접근성</span>을 지켰습니다.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="https://leesukyung6999.github.io/kodak/" title="코닥 리뉴얼 페이지" target="_blank">
+                      <img src="images/3_kodak_m_p2.png" alt="">
+                    </a>
+                    <div class="m_txt">
+                      <strong class="b">2</strong>
+                      <p>jQuery로 핸드폰이 오른쪽으로 기울어지는 모션과 블루투스가 깜빡이고 나면 카메라에서 사진이 나오게 <span class="b_y">animate</span>을 이용하여
+                        구현하였습니다.
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="https://leesukyung6999.github.io/kodak/" title="코닥 리뉴얼 페이지" target="_blank">
+                      <img src="images/3_kodak_m_p3.png" alt="">
+                    </a>
+                    <div class="m_txt">
+                      <strong class="b">3</strong>
+                      <p><span class="b_y">delay와 animate</span> 효과로 실제로 4pass 인화되는 것처럼 보여지도록 구현했습니다.</p>
+                    </div>
+                  </li>
+                  <li class="last">
+                    <a href="https://leesukyung6999.github.io/kodak/" title="코닥 리뉴얼 페이지" target="_blank">
+                      <img src="images/3_kodak_m_p4.png" alt="">
+                    </a>
+                    <div class="m_txt">
+                      <strong class="b">4</strong>
+                      <p>html로 <span class="b_y">아코디언</span>으로 마크업했으며,
+                        jQuery로 접근성을 지키며 해당 사진을 클릭하면 <span class="b_y">animate로 max-height</span>이 늘어나는 효과를 주어 상세 내용이
+                        구현하였습니다.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>15
             </div>
           </div>
         </div>
       </div>
     </div>
-    <button type="button" class="close_btn"><img src="images/close_btn.png" alt="현재 창 닫기"></button>
+    <button type="button" class="close_btn"><img src="images/close_btn_s.png" alt="현재 창 닫기"></button>
   </div>
+  </html>
 </body>
-
-</html>

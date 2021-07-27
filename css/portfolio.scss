@@ -13,9 +13,8 @@ body{font-family: "noto sans kr";color: #fff;}
 
 // common class
 .clearfix::after{content: "";display: block;clear: both;}
+.blind{width: 1px;height: 1px;overflow: hidden;border: none;position: absolute;clip: rect(1px,1px,1px,1px);clip-path: inset(50%);}
 
-// #wrap
-// #wrap{overflow: hidden;} sticky 속성을 적용하는 상위의 어떤 부모도 overflow: hidden,auto, scroll을 가지면 안됩니다
 // #header
 #header{
     @include flex;
@@ -30,7 +29,7 @@ body{font-family: "noto sans kr";color: #fff;}
 }
 // intro
 #intro{
-    background-image: url("../images/1_rainbow.png") , linear-gradient($pink,$wPurple);background-repeat: no-repeat;background-position: 100% 0;
+    background: url("../images/1_rainbow.png") , linear-gradient($pink,$wPurple);background-repeat: no-repeat;background-position: 100% 0;
     .intro{
         position: relative;padding-top: 200px;
         .balloon{position: absolute;}
@@ -41,10 +40,7 @@ body{font-family: "noto sans kr";color: #fff;}
             .hello{
                 position: absolute;left: 35%;top: 35%;font-size: 150px;
             }
-            .cloud{
-                @include transform(translateZ(500px));
-                position: relative;z-index: 10;
-            }
+            .cloud{@include transform(translateZ(500px));}
         }
         .balloon{
             &:nth-of-type(1){left: 58%;top: 0%;}
@@ -64,29 +60,23 @@ body{font-family: "noto sans kr";color: #fff;}
     .intro h2, .intro .balloon{@include transition(all 2s cubic-bezier(0, 0.71, 0.12, 1));opacity: 0;}
     .intro h2{@include transform(translate(-10.416vw, 0));transition-delay: 0.9s;}
     .intro .balloon{@include transform(translate(0, 10.416vw));}
-    .intro_top .balloon:first-child{transition-delay: 0.3s;}
-    .intro_top .balloon:last-child{transition-delay: 0.6s;}
-    .intro_btm .balloon:first-child{transition-delay: 0.3s;}
-    .intro_btm .balloon:last-child{transition-delay: 0.6s;}
-
+    .intro_top .balloon:first-child, .intro_btm .balloon:first-child{transition-delay: 0.3s;}
+    .intro_top .balloon:last-child, .intro_btm .balloon:last-child{transition-delay: 0.6s;}
     .intro.fade h2, .intro.fade .cloud, .intro.fade .balloon{@include transform(translate(0, 0));opacity: 1;}
 }
 // about
 #about{
-    position: relative;height: 200vh;/* background: linear-gradient($wPurple, #AB9CDE); */border: 1px solid #000;
-    .sticky{
-        position: sticky; top: 0px; height: 100vh;
-    }
+    position: relative;height: 250vh;background: linear-gradient($wPurple, #AB9CDE);
+    .sticky{position: sticky;top: 0;height: 100vh;}
     .window{
         @include transition(all 0.5s ease-in-out);
-        position: relative;z-index: 50;text-align: center;width: 100%;height: 100vh;background: linear-gradient($wPurple, #AB9CDE);
+        position: relative;z-index: 50;text-align: center;width: 100%;height: 100%;background: linear-gradient($wPurple, #AB9CDE);
         .img_wrap{
             @include translateX-50;
             position: absolute;top: 0;left: 50%;width: 700px;
         }
-        h2{padding: 50px 0;
-        }
-        .birds, .angel, .cloud, .open{position: absolute;}
+        h2{padding: 50px 0;}
+        .birds, .angel, .cloud{position: absolute;}
         .birds, .cloud{@include transition(all 1s 0.2s);}
         .birds{left: 50%;top: 20%;}
         .cloud{left: -20%;top: 30%;}
@@ -95,19 +85,32 @@ body{font-family: "noto sans kr";color: #fff;}
     .txt{
         @include flex;
         @include justify-content(flex-end);
-        visibility: hidden;opacity: 0;position: absolute; left: 0;top: 0;width: 100%;height: 100%;color: #707070;background: rgba(255,255,255,.75);
-        div{width: 50%;padding: 5%;box-sizing: border-box;}
-        h2{font-size: 50px;font-weight: 700;margin-bottom: 85px;}
-        p{margin-bottom: 55px;}
-        .go_back{position: absolute;right: 50px;bottom: 50px;width: 175px;height: 175px;z-index: 5;}
+        visibility: hidden;opacity: 0;position: absolute;left: 0;top: 0;width: 100%;height: 100%;color: #707070;background: rgba(255,255,255,.65);font-size: 22px;line-height: 1.6;
+        > div{
+            width: 50%;padding: 5%;box-sizing: border-box;
+        }
+        .howdoithink{
+            h2{font-size: 45px;font-weight: 700;margin-bottom: 30px;}
+            .bold{font-weight: 700;font-size: 25px;}
+            p{padding: 20px 0;}
+        }
+        .character{
+            @include flex;
+            @include align-items;
+            p{width: 80%;padding: 20px 0;word-wrap: break-word;}
+        }
+        .skill{
+            margin-top: 20px;
+            h3{display: inline-block;padding-right: 100px;}
+            img{padding-right: 30px;}
+        }
     }
 }
 #about.on{
     .window{
-        width: 50%;height: 80vh;
-        .birds{left: 57%;top: 8%;}
-        .cloud{left: -30%;top: 23%;}
-        .open{display: none;}
+        width: 50%;height: 85vh;
+        .birds{left: 57%;top: 25%;}
+        .cloud{left: -20%;top: 33%;}
     }
     .txt{
         @include transition(all 1s 0.5s);
@@ -116,144 +119,211 @@ body{font-family: "noto sans kr";color: #fff;}
 }
 // work
 #work{
-    background: url("../images/3_clouds.png"), linear-gradient(#AB9CDE, #6D5BAB);background-repeat: no-repeat;background-position: 0 100%;padding-top: 300px;box-sizing: border-box;
+    background: linear-gradient(#AB9CDE, #6D5BAB);background-repeat: no-repeat;padding-top: 300px;box-sizing: border-box;overflow: hidden;
     .front_back{
-        position: relative;margin: 0 auto;width: 1220px;height: 800px;border: 1px solid #000;
+        @include transform(perspective(0));
+        position: relative;margin: 0 auto;width: 1220px;
         .card{
             @include transition(all 1s);
-            position: absolute;left: 0;top: 0;width: 100%;height: 50%;backface-visibility: hidden;
             @include flex;
             @include flex-direction;
             @include align-items;
+            position: absolute;left: 0;top: 0;width: 100%;height: 100%;backface-visibility: hidden;
             z-index: 50;
-            h3{font-size: 60px;}
-            .open{border: 2px solid #fff;border-radius: 15px;padding: 5px 10px;margin-top: 20px;}
+            h3{font-size: 50px;text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);}
+            &.front h3{color: #F6CD85;}
+            &.back h3{color: #000}
+            .open{border: 2px solid #fff;border-radius: 25px;padding: 10px 15px;margin-top: 40px;}
+            .open:hover{background: rgba(255, 255, 255, 0.3);}
         }
-        .controller{
-            position: relative;width: 100%;height: 120px;
-            .prev_next{
-                button{position: absolute;top: 0;}
-                .prev{left: 20%;}
-                .next{right: 20%;}
-            }
+        .prev_next{
+            position: relative;width: 100%;height: 120px;z-index: 70;
+            button{position: absolute;top: 95%;}
+            .prev{left: 20%;}
+            .next{right: 20%;}
         }
         .front{@include transform(rotateY(0deg));}
         .back{@include transform(rotateY(-180deg));}
-        &:hover .front, &.flip .front{@include transform(rotateY(180deg));}
-        &:hover .back, &.flip .back{@include transform(rotateY(0deg));}
+        &.flip .front{@include transform(rotateY(180deg));}
+        &.flip .back{@include transform(rotateY(0deg));}
+    }
+    > img{
+        margin-left: -10px;// 1920에서 -25px로?
     }
 }
 // work 모달 창
+#dim{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(255, 255, 255,.7);}
 #modalWork{
-    position: fixed;top: 0;left: 0;width: 100%;background: rgba(255, 255, 255,.7);z-index: 70;display: none;
+    @include translate-50;
+    position: fixed;top: 50%;left: 50%;z-index: 70;width: calc(100% - 140px);height: calc(100% - 140px);;
     .modal_wrap{
-        margin: 70px 70px;background: #F6CD85;
+        /* margin: 70px 70px; */background: #F6CD85;height: calc(100vh - 140px);overflow: hidden;
         // tablist 와 tab
         > ul{
             @include flex;
-            width: 600px;margin: 0 auto;padding: 35px 0;
-            li{width: 50%;height: 60px;line-height: 54px;border: 3px solid #fff;box-sizing: border-box;text-align: center;font-size: 20px;font-weight: 600;}
+            width: 600px;margin: 0 auto;padding: 30px 0;z-index: 50;
+            li{
+                width: 50%;height: 60px;line-height: 54px;border: 3px solid #fff;box-sizing: border-box;text-align: center;font-size: 18px;font-weight: 600;cursor: pointer;
+            }
             li:first-child{border-radius: 20px 0 0 20px;}
             li:last-child{border-radius: 0 20px 20px 0;}
+            li:first-child.on{background: #fff;color: #707070;}
+            li:last-child.on{background: #fff;color: #222;}
         }
     }
     // tabpanel 공통
     .tabpanel{
         .md_tit{
-            position: relative;font-size: 150px;letter-spacing: 5px;line-height: 200px;box-sizing: border-box;
-            img{position: absolute;}
-        }
-        ul li{
-                .b{display: inline-block;font-size: 4.17vw;font-weight: 700;vertical-align: top;}
-                p{display: inline-block;padding: 45px 0 95px;font-size: 18px;line-height: 2;width: 31.25vw;}
-                .bb{color: #707070;font-size: 18px;font-weight: 600;}
+            position: relative;font-size: 200px;letter-spacing: 5px;line-height: 200px;box-sizing: border-box;text-align: center;
+            img{
+                @include transition(all 0.5s);
+                @include transform(translate(0,250px) rotate(-90deg));
+                position: absolute;
             }
+    }
+        .move_up{
+            padding: 0 50px;box-sizing: border-box;overflow: hidden; // 스크롤
+            ul li{
+            a{
+                display: block;
+                img{max-width: 100%;}
+            }
+            .b{display: inline-block;font-size: 2.6vw;font-weight: 700;vertical-align: top;}
+            p{display: inline-block;padding: 50px 0;font-size: 18px;line-height: 2;width: 31.25vw;}
+            .bb{color: #fff;font-size: 22px;font-weight: 600;}
+            }
+        }
     }
     //설화수
     #tabpanel1{
-        display: none;
             > * {float: left;width: 50%;}
             .md_tit{
-                padding: 50px 185px;text-shadow: 40px 3px 6px rgba(0, 0, 0, 0.16);
-                //img{@include transition(all 1s);}
-                img:nth-of-type(1){@include transform(rotate(-18deg));left: 55%;top: 10%;}
-                img:nth-of-type(2){@include transform(rotate(16deg));left: 10%;top: 53%;}
-                img:nth-of-type(3){@include transform(rotate(13deg));left: 55%;top: 60%;}
+                padding: 0 75px;text-shadow: 40px 3px 6px rgba(0, 0, 0, 0.16);
             }
-            ul li{
-                &:nth-child(even) .b{color: #707070;}
+            &.on .md_tit{
+                img:nth-of-type(1){@include transform(translate(0,0) rotate(-18deg));left: 68%;top: 2%;}
+                img:nth-of-type(2){@include transform(translate(0,0) rotate(16deg));left: 19%;top: 53%;}
+                img:nth-of-type(3){@include transform(translate(0,0) rotate(13deg));left: 67%;top: 60%;}
+            }                
+            .move_up{
+                height: 75vh;color: #707070;
+                ul{
+                    li{padding-top: 50px;}
+                    // li:nth-child(even) .b{color: #fff;}
+                }
             }
+
     }
     // 코닥
     #tabpanel2{
             > * {float: right;width: 50%;}
-            .md_tit{
-                padding: 180px 0;text-align: center;
-                img:nth-of-type(1){@include transform(rotate(-18deg));left: 45%;top: 5%;}
-                img:nth-of-type(2){@include transform(rotate(16deg));left: 0;top: 60%;}
-                img:nth-of-type(3){@include transform(rotate(-29deg));left: 55%;top: 81%;}
+            &.on .md_tit{
+                padding: 180px 0;
+                img:nth-of-type(1){@include transform(translate(0,0) rotate(-17deg));left: 45%;top: 0%;}
+                img:nth-of-type(2){@include transform(translate(0,0) rotate(16deg));left: 8%;top: 60%;}
+                img:nth-of-type(3){@include transform(translate(0,0) rotate(-29deg));left: 55%;top: 81%;}
             }
             .responsive{
-                padding: 0 50px;box-sizing: border-box;
                 > ul{
-                    @include flex;
-                    margin-bottom: 70px;
-                    li{width: calc(100% / 3);text-align: center;font-size: 35px;font-weight: 600;height: 80px;vertical-align: bottom;opacity: 0.7;}
-                    li.on{opacity: 1;}
-                    span{display: block;}
-                }
-                .move_up{
-                    .tabpanelR{
-                        > p{width: 450px;padding: 65px 0;text-align: left;font-size: 25px;}
-                        ul li{
-                            a{
-                                display: block;
-                                img{width: 33.854vw;}
-                            }
-                            &:nth-child(even) .b{color: #FFB301;}
-                            .b_y{color: #FFB301;font-weight: 600;}
-                        }  
+                    @include flex;position: relative;z-index: 50;
+                    li{
+                        @include transition(opacity 0.5s);
+                        width: calc(100% / 3);height: 110px;opacity: 0.2;cursor: pointer;vertical-align: bottom;text-align: center;
+                        h5{font-size: 20px;font-weight: 600;}
+                        &:nth-child(3){padding-top: 10px;}
                     }
-                    #tabpanelM{
-                        li{
-                            @include flex;
-                            @include align-items(flex-end);
-                            margin-bottom: 200px;
-                            a{
-                                display: inline-block;
-                                img{width: 250px;}
-                            }
-                            .m_txt{
-                                strong{margin-top: -30px;}
-                                p{width: 80%;padding: 0;}
+                    li.on{opacity: 1;}
+                }
+                .move_up{ 
+                    height: 60vh;
+                    > div{
+                    // tabpanelPC, tabpanelTb, tabpanelM 공통
+                        text-align: center;
+                        .tabpanelR{
+                            > p{width: 450px;padding: 65px 0;text-align: left;font-size: 25px;}
+                            ul li{
+                                height: 60vh;box-sizing: border-box;
+                                a{
+                                    display: block;
+                                    img{width: 33.854vw;}
+                                }
+                                &:nth-child(even) .b{color: #FFB301;}
+                                .b_y{color: #FFB301;font-weight: 600;}
+                                p{text-align: left;}
+                            }  
+                        }
+                        #tabpanelM{
+                            ul li{
+                                @include flex;
+                                @include align-items(flex-end);
+                                a{
+                                    display: inline-block;
+                                    img{width: 250px;}
+                                }
+                                .m_txt{
+                                    strong{margin-top: -30px;}
+                                    p{width: 80%;padding: 0;}
+                                }
                             }
                         }
-                    }
-                                           
-                 }  
+                    }  
+                }
             }
     }
-    .close_btn{position: absolute;right: 30px;top: 30px;width: 31px;height: 31px;}
+    .close_btn{position: absolute;right: -40px;top: -40px;width: 31px;height: 31px;}
 }
 // tab이 .active를 가지는 경우
-#modalWork{
-    .modal_wrap.active{
-        background: #222;   
-        > ul {
-            li:first-child.on{background: #fff;color: #707070;}
-            li:last-child.on{background: #fff;color: #222;}
+#modalWork .modal_wrap.active{background: #222;}
+// contact
+#contact{
+    @include flex;
+    @include justify-content(space-between);
+    background: url("../images/4_bg.png"), linear-gradient(#6D5BAB, #342C51);width: 100%;overflow: hidden;background-position: 0 -5%;background-repeat: no-repeat;height: 100vh;
+    > *{float: left;box-sizing: border-box;height: 100%;margin-top: 200px;}
+    h2{width: 55%;font-size: 150px;font-weight: 700;color: rgba(255, 255, 255,.7);text-align: left;padding: 50px 150px;}
+    div{
+        width: 45%;
+        > div{height: 50%;}
+        .contact_img{
+            @include keyframes(upDown);
+            @include animation(upDown 2.5s cubic-bezier(0.14, 0.47, 0.51, 1.04) infinite backwards);
+            position: relative;
+            h2{position: absolute;left: 35%;top: -3%;}
         }
-    
+        .contact_txt{
+            box-sizing: border-box;padding: 40px 0;
+            > div{background: no-repeat 3% 0%;height: 50px;margin-bottom: 20px;padding-left: 100px;}
+            .birth{background-image: url("../images/4_icon1.png");}
+            .home{background-image: url("../images/4_icon2.png");}
+            .email{background-image: url("../images/4_icon3.png");}
+        }
     }
 }
+@keyframes upDown {
+    0%{@include transform(translate(0, 50px));}
+    50%{@include transform(translate(0, 0));}
+    100%{@include transform(translate(0, 50px));}
+}
 
-// contact
 // aside#banner > nav#snb
-#banner{
-    display: none;
-    position: fixed;right: 3%;top: 10%;background: url("../images/sub_nav.png") no-repeat center;width: 235px;height: 667px;
-    #snb{
-        position: absolute;right: 10%;top: 47%;
-        li{margin-bottom: 50px;color: /* #816e5a */#fff;}
+// #banner{
+//     display: none;
+//     position: fixed;right: 3%;top: 10%;background: url("../images/sub_nav.png") no-repeat center;width: 235px;height: 667px;
+//     #snb{
+//         position: absolute;right: 10%;top: 47%;
+//         li{margin-bottom: 50px;color: /* #816e5a */#fff;}
+//     }
+// }
+
+@media screen and (max-width: 1680px) {
+    #work > img{
+        margin-left: -110px;
     }
+
+}
+@media screen and (max-width: 1440px) {
+    #work > img{
+        margin-left: -240px;
+    }
+
 }
